@@ -13,6 +13,8 @@ public class InputManager : MonoBehaviour
     
     public event Action OnAbility3;
     public event Action ToggleCharacterInfo;
+    public event Action OnInteract;
+
 
     [SerializeField] private AbilitySO attackAbilitySO;
     [SerializeField] private AbilitySO ability1SO;
@@ -81,6 +83,8 @@ public class InputManager : MonoBehaviour
         };
         
         playerInputActions.Player.ToggleCharacterInfo.performed += ctx => ToggleCharacterInfo?.Invoke();
+        playerInputActions.Player.Interact.performed += ctx => OnInteract?.Invoke();
+
 
         PlayerHealthAndManaManager.OnDeath += PlayerHealthManager_OnDeath;
     }
