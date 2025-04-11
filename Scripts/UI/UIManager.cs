@@ -5,7 +5,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject characterInfoUI;
     [SerializeField] private GameObject gameplayUI;
     [SerializeField] private GameObject skillTreeUI;
-    [SerializeField] private InputManager inputManager;
 
     private bool isCharacterInfoUIVisible = false;
     private bool isSkillTreeUIVisible = false;
@@ -17,7 +16,7 @@ public class UIManager : MonoBehaviour
         characterInfoUI.SetActive(false);
         skillTreeUI.SetActive(false);
 
-        inputManager.ToggleCharacterInfo += ToggleCharacterInfoUI;
+        InputManager.instance.ToggleCharacterInfo += ToggleCharacterInfoUI;
     }
 
     public void ToggleCharacterInfoUI()
@@ -43,15 +42,11 @@ public class UIManager : MonoBehaviour
 
             isSkillTreeUIVisible = !isSkillTreeUIVisible;
             skillTreeUI.SetActive(isSkillTreeUIVisible);
-            
         }
     }
 
     private void OnDestroy()
     {
-        if (inputManager != null)
-        {
-            inputManager.ToggleCharacterInfo -= ToggleCharacterInfoUI;
-        }
+        InputManager.instance.ToggleCharacterInfo -= ToggleCharacterInfoUI;
     }
 }

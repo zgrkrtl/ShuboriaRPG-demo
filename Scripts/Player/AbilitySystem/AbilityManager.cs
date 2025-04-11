@@ -18,7 +18,6 @@ public class AbilityManager : MonoBehaviour
     [SerializeField] private AbilitySO ability3SO;
     
     [FormerlySerializedAs("spawnPoint")] [SerializeField] private Transform fireballSpawnPoint; 
-    [SerializeField] private InputManager inputManager;
     
     private bool isAttacking = false;
     private Vector3 lastMouseScreenPosition;
@@ -37,6 +36,11 @@ public class AbilityManager : MonoBehaviour
         cooldownTimers[ability1SO] = 0f;
         cooldownTimers[ability2SO] = 0f;
         cooldownTimers[ability3SO] = 0f;
+        
+        InputManager.instance.OnAttack += HandleAttack;
+        InputManager.instance.OnAbility1 += HandleAbilityOne;
+        InputManager.instance.OnAbility2 += HandleAbilityTwo;
+        InputManager.instance.OnAbility3 += HandleAbilityThree;
     }
 
     private void Update()
@@ -65,24 +69,16 @@ public class AbilityManager : MonoBehaviour
     }
     private void OnEnable()
     {
-        if (inputManager != null)
-        {
-            inputManager.OnAttack += HandleAttack;
-            inputManager.OnAbility1 += HandleAbilityOne;
-            inputManager.OnAbility2 += HandleAbilityTwo;
-            inputManager.OnAbility3 += HandleAbilityThree;
-        }
+        
+        
     }
     
     private void OnDisable()
     {
-        if (inputManager != null)
-        {
-            inputManager.OnAttack -= HandleAttack;
-            inputManager.OnAbility1 -= HandleAbilityOne;
-            inputManager.OnAbility2 -= HandleAbilityTwo;
-            inputManager.OnAbility3 -= HandleAbilityThree;
-        }
+        InputManager.instance.OnAttack -= HandleAttack;
+        InputManager.instance.OnAbility1 -= HandleAbilityOne;
+        InputManager.instance.OnAbility2 -= HandleAbilityTwo;
+        InputManager.instance.OnAbility3 -= HandleAbilityThree;
     }
     
 

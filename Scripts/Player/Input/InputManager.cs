@@ -4,6 +4,8 @@ using System;
 
 public class InputManager : MonoBehaviour
 {
+    public static InputManager instance { get; private set; }
+
     private PlayerInputActions playerInputActions;
 
     public event Action<Vector2> OnMove;
@@ -25,14 +27,14 @@ public class InputManager : MonoBehaviour
     
     [SerializeField] PlayerHealthAndManaManager playerHealthAndManaManager;
     
-    public void SetAttackTarget(Transform target)
-    {
-        attackTarget = target;
-    }
-    
-
     private void Awake()
     {
+        if (instance != null)
+        {
+            Debug.LogError("Found more than one Game Events Manager in the scene.");
+        }
+        instance = this;
+        
         playerInputActions = new PlayerInputActions();
         playerInputActions.Player.Enable();
 
@@ -88,9 +90,14 @@ public class InputManager : MonoBehaviour
 
         PlayerHealthAndManaManager.OnDeath += PlayerHealthManager_OnDeath;
     }
-
+    
     private void PlayerHealthManager_OnDeath()
     {
         playerInputActions.Disable();
+    }
+    
+    public void SetAttackTarget(Transform target)
+    {
+        attackTarget = target;
     }
 }

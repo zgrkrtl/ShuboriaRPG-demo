@@ -10,14 +10,13 @@ public class StatTreeManager : MonoBehaviour
     [SerializeField] private GameObject[] components;
     [SerializeField] private CharacterStatsManager characterStatsManager;
     [SerializeField] private TextMeshProUGUI abilityPointsText;
-    [SerializeField] private GameplayManager gameplayManager;
 
     public int abilityPoints;
     private SkillTreeData skillTreeData;
     private MandatoryData mandatoryData;
     private void Start()
     {
-        gameplayManager.OnLevelUp += () => IncreaseAbilityPoints();
+        GameplayManager.instance.OnLevelUp += () => IncreaseAbilityPoints();
         
         mandatoryData = MandatoryDataSaveManager.Load();
         abilityPointsText.text = mandatoryData.abilityPoints.ToString();

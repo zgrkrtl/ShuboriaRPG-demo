@@ -8,7 +8,6 @@ using UnityEngine.UI;
 
 public class LevelAndExperienceUI : MonoBehaviour
 {
-    [SerializeField] private GameplayManager gameplayManager;
     [SerializeField] private Image fillableOne;
     [SerializeField] private Image fillableTwo;
     [SerializeField] private Image frontImage;
@@ -19,9 +18,9 @@ public class LevelAndExperienceUI : MonoBehaviour
     private void Start()
     {
         mandatoryData = MandatoryDataSaveManager.Load();
-        gameplayManager.OnExperienceAndLevelChange += OnExperienceAndLevelChange;
+        GameplayManager.instance.OnExperienceAndLevelChange += OnExperienceAndLevelChange;
         
-        UpdateExperienceUI(mandatoryData.experiencePoints / gameplayManager.ExperienceRequiredForLevel(mandatoryData.level + 1));
+        UpdateExperienceUI(mandatoryData.experiencePoints / GameplayManager.instance.ExperienceRequiredForLevel(mandatoryData.level + 1));
         levelText.text = mandatoryData.level.ToString();
     }
 

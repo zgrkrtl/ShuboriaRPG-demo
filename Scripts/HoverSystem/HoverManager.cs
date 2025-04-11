@@ -5,7 +5,6 @@ using UnityEngine.InputSystem; // For new Input System
 
 public class HoverManager : MonoBehaviour
 {
-    [SerializeField] private InputManager inputManager;
     [SerializeField] private LayerMask hoverableLayers;
 
     public static HoverManager Instance { get; private set; }
@@ -26,7 +25,6 @@ public class HoverManager : MonoBehaviour
             return;
         }
     }
-
     
     private void FixedUpdate()
     {
@@ -54,7 +52,7 @@ public class HoverManager : MonoBehaviour
             lastHovered = hoverable;
             
             // set target
-            inputManager.SetAttackTarget(hit.collider.transform);
+            InputManager.instance.SetAttackTarget(hit.collider.transform);
             return;
         }
 
@@ -65,7 +63,7 @@ public class HoverManager : MonoBehaviour
         }
         
         // set target
-        inputManager.SetAttackTarget(null);
+        InputManager.instance.SetAttackTarget(null);
     }
     
 }

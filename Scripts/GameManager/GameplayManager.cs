@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class GameplayManager : MonoBehaviour
 {
+   public static GameplayManager instance { get; private set; }
+
    public Action<int, float> OnExperienceAndLevelChange;  
    public Action OnLevelUp;
    
@@ -15,7 +17,16 @@ public class GameplayManager : MonoBehaviour
    private int abilityPoints;
    
    private MandatoryData mandatoryData;
-   
+
+   private void Awake()
+   {
+      if (instance != null)
+      {
+         Debug.LogError("Found more than one Game Events Manager in the scene.");
+      }
+      instance = this;
+   }
+
    private void Start()
    {
       // binding necessary delegates

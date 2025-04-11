@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float movementSpeed = 5.0f;
-    [SerializeField] private InputManager inputManager;
 
     private Rigidbody rb;
     private Animator animator;
@@ -33,18 +32,15 @@ public class PlayerController : MonoBehaviour
         playerCollider = GetComponent<CapsuleCollider>();
     }
 
-    private void OnEnable()
+    private void Start()
     {
-        // Subscribe to movement input event
-        if (inputManager != null)
-            inputManager.OnMove += HandleMovementInput;
+        InputManager.instance.OnMove += HandleMovementInput;
     }
+    
 
     private void OnDisable()
     {
-        // Unsubscribe from movement input event
-        if (inputManager != null)
-            inputManager.OnMove -= HandleMovementInput;
+        InputManager.instance.OnMove -= HandleMovementInput;
     }
 
     // Cache the current input for use in FixedUpdate
