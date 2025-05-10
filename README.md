@@ -2,19 +2,22 @@
 Shuboria is a fantasy-themed action RPG built with Unity. You play as a mystical mage exploring ancient lands, battling enemies with powerful abilities, and progressing by gaining experience and unlocking skills.
 
 ## Features
-🎮 Smooth player movement with responsive controls
 
-⚔️ Dynamic ability system with cooldowns and visual effects
+RPG Gameplay experience
+Level up!:Kill monsters gain experience points(gain ability points) and items
+Open World: Improve your character by discovering the shuboria world
+Gain Stats: Gain Int,Dex,Str by ability points
+Questing: Complete quests gain gold and items while leveling
 
-💥 Projectile-based combat
+## Systems Implemented
 
-📊 Floating combat text for damage and experience
+Classic UI for RPG game
+Ability System(Stats and abilities)
+Quest System
+Inventory System
+Local Data Saving System
+Artificial Intelligence(Enemy)
 
-🧠 Basic AI and enemy behavior
-
-🌍 Save/load system with persistent player data
-
-🎨 UI updates for health, mana, and cooldowns
 
 ⏳ Experience system with progressive leveling formula
 ## Technologies Used
@@ -27,4 +30,8 @@ Unity 6
 ![Gameplay Screenshot](Screenshots/Shurpgscreenshot2.jpeg)
 ![Gameplay Screenshot](Screenshots/Shurpgscreenshot3.jpeg)
 ![Gameplay Screenshot](Screenshots/Shurpgscreenshot4.jpeg)
-![Gameplay Screenshot](Screenshots/Shurpgscreenshot5.jpeg)
+![Gameplay Screenshot](Screenshots/Shurpgscreenshot6.jpeg)
+![Gameplay Screenshot](Screenshots/Shurpgscreenshot7.jpeg)
+![Gameplay Screenshot](Screenshots/Shurpgscreenshot8.jpeg)
+![Gameplay Screenshot](Screenshots/Shurpgscreenshot9.jpeg)
+![Gameplay Screenshot](Screenshots/Shurpgscreenshot10.jpeg)
