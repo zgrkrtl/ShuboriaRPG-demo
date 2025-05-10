@@ -13,11 +13,15 @@ public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     [SerializeField] private string headerColor = "green";
     [SerializeField] private string contentColor = "black";
+    [SerializeField] private bool isItemSlot = false;
+    
+    private InventorySlot inventorySlot;
     
     private Coroutine showTooltipCoroutine;
-    
+        
     public void OnPointerEnter(PointerEventData eventData)
     {
+        inventorySlot = GetComponent<InventorySlot>();
         showTooltipCoroutine = StartCoroutine(ShowTooltipWithDelay());
     }
 
@@ -34,6 +38,11 @@ public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     private IEnumerator ShowTooltipWithDelay()
     {
         yield return new WaitForSeconds(0.25f);
+        if (isItemSlot && inventorySlot.SlotItem != null)
+        {
+            header = inventorySlot.SlotItem.ColouredName;
+            content = inventorySlot.InfoDisplay;
+        }
         TooltipSystem.Show(content, header,headerColor,contentColor);
     }
 }

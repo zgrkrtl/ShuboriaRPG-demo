@@ -13,7 +13,7 @@ public class QuestInfoSO : ScriptableObject
    public int levelRequirement;
    public QuestInfoSO[] questPrerequisites;
    
-   [Header("Steps")]
+   [Header("Steps")] 
    public GameObject[] questStepPrefabs;
 
    [Header("Rewards")]
@@ -25,7 +25,7 @@ public class QuestInfoSO : ScriptableObject
    private void OnValidate()
    {
       #if UNITY_EDITOR
-      id = this.name;
+      id = name;
       UnityEditor.EditorUtility.SetDirty(this);
       #endif
    }

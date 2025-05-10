@@ -1,13 +1,13 @@
 {
     "Stats": {
         "MaxHealth": 105.0,
-        "MaxMana": 125.0,
-        "Armor": 6.5,
-        "AbilityDamage": 32.0,
+        "MaxMana": 150.0,
+        "Armor": 9.5,
+        "AbilityDamage": 63.0,
         "HealthRegen": 1.100000023841858,
-        "ManaRegen": 1.5,
+        "ManaRegen": 2.0,
         "Vitality": 1.0,
-        "Intelligence": 5.0,
-        "Dexterity": 1.0
+        "Intelligence": 10.0,
+        "Dexterity": 7.0
     }
 }

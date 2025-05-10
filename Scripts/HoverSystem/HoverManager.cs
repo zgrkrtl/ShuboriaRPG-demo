@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem; // For new Input System
@@ -6,6 +7,7 @@ using UnityEngine.InputSystem; // For new Input System
 public class HoverManager : MonoBehaviour
 {
     [SerializeField] private LayerMask hoverableLayers;
+    [SerializeField] private TextMeshProUGUI hoveredObjectTextInfo;
 
     public static HoverManager Instance { get; private set; }
 
@@ -50,7 +52,8 @@ public class HoverManager : MonoBehaviour
 
             hoverable.SetHoverState(true);
             lastHovered = hoverable;
-            
+            hoveredObjectTextInfo.text = hoverable.GetName();
+            hoveredObjectTextInfo.gameObject.SetActive(true);
             // set target
             InputManager.instance.SetAttackTarget(hit.collider.transform);
             return;
@@ -60,6 +63,7 @@ public class HoverManager : MonoBehaviour
         {
             lastHovered.SetHoverState(false);
             lastHovered = null;
+            hoveredObjectTextInfo.gameObject.SetActive(false);
         }
         
         // set target

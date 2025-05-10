@@ -3,6 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "EnemySO", menuName = "Scriptable Objects/EnemySO")]
 public class EnemySO : ScriptableObject
 {
+    [SerializeField] private string enemyName;
     [Header("Stats")]
     [SerializeField] private float maxHealth;
     [SerializeField] private float damage;
@@ -13,6 +14,7 @@ public class EnemySO : ScriptableObject
     [SerializeField] private GameObject hitEffectPrefab;
     [SerializeField] private float experiencePoints;
 
+    public string Name => enemyName;
     public float MaxHealth => maxHealth;
     public float Damage => damage;
     public float Speed => speed;

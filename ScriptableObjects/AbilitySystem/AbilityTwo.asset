@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b5cf7950d5f86747b01a579cdd321d7, type: 3}
+  m_Name: AbilityTwo
+  m_EditorClassIdentifier: 
+  abilityName: RED EXPLOSION
+  description: Drops a red explosion onto enemies
+  icon: {fileID: 21300000, guid: 8a5f9829a049c704fa992203bfc451f2, type: 3}
+  particlePrefab: {fileID: 2554069499637271248, guid: 894f6e16365189b448320fc4b5e58d62, type: 3}
+  cooldownTime: 15
+  manaCost: 20

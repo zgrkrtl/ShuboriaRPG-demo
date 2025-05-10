@@ -12,7 +12,9 @@ public  class EnemyBase : MonoBehaviour, IHoverable
 {
     public Action<float> OnDamageTaken;
     public static Action<float> OnEnemyDeath;
-    
+   
+    // essentials
+
     [SerializeField] protected EnemySO enemyData;
     [SerializeField] protected GameObject selectionIndicator;
     [SerializeField] private CharacterStatsManager characterStatsManager;
@@ -20,7 +22,12 @@ public  class EnemyBase : MonoBehaviour, IHoverable
     [SerializeField] private GameObject experiencePopUpPrefab;
     [SerializeField] private GameObject healthBar;
 
-    // essentials
+    // these control patrolling 
+    [SerializeField] private LayerMask whatIsGround, whatIsPlayer;
+    [SerializeField] private  float sightRange, attackRange, rotationSpeed, patrolRadius;
+    
+    // essential components
+    
     private Transform player;
     private NavMeshAgent agent;
     private Animator animator;
@@ -36,10 +43,6 @@ public  class EnemyBase : MonoBehaviour, IHoverable
         set => isHovered = value;
     }
     
-    // these control patrolling 
-    [SerializeField] private LayerMask whatIsGround, whatIsPlayer;
-    [SerializeField] private  float sightRange, attackRange, rotationSpeed, patrolRadius;
-   
     
     // some interior control mechanism and necessary bools
     private Vector3 walkPoint, startPoint;
@@ -316,6 +319,11 @@ public  class EnemyBase : MonoBehaviour, IHoverable
     public void DestroyGameObjectAfterDeath() 
     {
         Destroy(gameObject,1f);
+    }
+
+    public string GetName()
+    {
+        return enemyData.Name;
     }
     
 }

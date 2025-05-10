@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37cb496742209ab448f3220478f3f546, type: 3}
+  m_Name: SpiderData
+  m_EditorClassIdentifier: 
+  enemyName: Spider
+  maxHealth: 10
+  damage: 5
+  speed: 15
+  patrolRadius: 5
+  sightRange: 10
+  attackRange: 1
+  hitEffectPrefab: {fileID: 1758473627833946668, guid: 9b21333b068a5084ba09535839bee3c8, type: 3}
+  experiencePoints: 150

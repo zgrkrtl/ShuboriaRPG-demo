@@ -9,8 +9,6 @@ using UnityEngine.UI;
 public class LevelAndExperienceUI : MonoBehaviour
 {
     [SerializeField] private Image fillableOne;
-    [SerializeField] private Image fillableTwo;
-    [SerializeField] private Image frontImage;
     [SerializeField] private TextMeshProUGUI levelText;
     
     private Coroutine fillAnimationCoroutine;
@@ -58,22 +56,15 @@ public class LevelAndExperienceUI : MonoBehaviour
             Color currentColor = Color.Lerp(startColor, targetColor, t);
 
             fillableOne.fillAmount = currentPercentage;
-            fillableTwo.fillAmount = currentPercentage;
-
             fillableOne.color = currentColor;
-            fillableTwo.color = currentColor;
-            frontImage.color = currentColor;
 
             yield return null;
         }
 
         // Ensure final state is set
         fillableOne.fillAmount = targetPercentage;
-        fillableTwo.fillAmount = targetPercentage;
 
         fillableOne.color = targetColor;
-        fillableTwo.color = targetColor;
-        frontImage.color = targetColor;
     }
     private Color GetColorFromPercentage(float percentage)
     {

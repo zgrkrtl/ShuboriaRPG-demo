@@ -41,17 +41,21 @@ public class Tooltip : MonoBehaviour
     {
         if (Application.isEditor)
         {
-            int headerLenghth = headerField.text.Length;
-            int contentLenghth = contentField.text.Length;
-            
-            layoutElement.enabled = headerLenghth > characterWrapLimit || contentLenghth > characterWrapLimit;
+            int headerLength = headerField.text.Length;
+            int contentLength = contentField.text.Length;
+
+            layoutElement.enabled = headerLength > characterWrapLimit || contentLength > characterWrapLimit;
         }
-        
+
         Vector2 position = Input.mousePosition;
-        
+
+        // Add an offset to move the tooltip slightly above the cursor
+        Vector2 offset = new Vector2(10f, 40f); // You can adjust these values to your preference
+        position += offset;
+
         float pivotX = position.x / Screen.width;
         float pivotY = position.y / Screen.height;
-        
+
         rectTransform.pivot = new Vector2(pivotX, pivotY);
         transform.position = position;
     }

@@ -1,0 +1,31 @@
+{
+    "quests": [
+        {
+            "questId": "CollectQuest",
+            "questData": {
+                "state": 1,
+                "questStepIndex": 0,
+                "questStepStates": [
+                    {
+                        "state": ""
+                    }
+                ]
+            }
+        },
+        {
+            "questId": "VisitTreeQuest",
+            "questData": {
+                "state": 0,
+                "questStepIndex": 0,
+                "questStepStates": [
+                    {
+                        "state": ""
+                    },
+                    {
+                        "state": ""
+                    }
+                ]
+            }
+        }
+    ]
+}

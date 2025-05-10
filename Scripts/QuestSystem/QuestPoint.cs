@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
@@ -10,7 +11,8 @@ public class QuestPoint : MonoBehaviour
     [Header("Config")] 
     [SerializeField] private bool startPoint = true;
     [SerializeField] private bool finishPoint = true;
-
+    [SerializeField] private GameObject interactableText;
+    [SerializeField] private GameObject interactableSelect;
     
     private bool playerIsNear = false;
     private string questId;
@@ -66,7 +68,7 @@ public class QuestPoint : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            playerIsNear = true;
+            SetEverything(true);
         }
     }
 
@@ -74,7 +76,14 @@ public class QuestPoint : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            playerIsNear = false;
+            SetEverything(false);
         }
+    }
+
+    private void SetEverything(bool state)
+    {
+        playerIsNear = state;
+        interactableText.SetActive(state);
+        interactableSelect.SetActive(state);
     }
 }

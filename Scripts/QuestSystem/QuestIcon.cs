@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class QuestIcon : MonoBehaviour
@@ -6,7 +7,7 @@ public class QuestIcon : MonoBehaviour
     [SerializeField] private GameObject canStartIcon;
     [SerializeField] private GameObject requirementsNotMetToFinishIcon;
     [SerializeField] private GameObject canFinishIcon;
-
+    
     private void Update()
     { 
         transform.LookAt(Camera.main.transform);
@@ -37,7 +38,7 @@ public class QuestIcon : MonoBehaviour
                 if(finishPoint) {canFinishIcon.SetActive(true);}
                 break;
             default:
-                Debug.LogError("Unknown quest state: " + newState);
+                Debug.Log("Quest Finished or Unknown quest state" + newState);
                 break;
         }
     }
