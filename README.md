@@ -3,11 +3,11 @@ Shuboria is a fantasy-themed action RPG built with Unity. You play as a mystical
 
 ## Features
 
-RPG Gameplay experience
-Level up!:Kill monsters gain experience points(gain ability points) and items  
-Open World: Improve your character by discovering the shuboria world  
-Gain Stats: Gain Int,Dex,Str by ability points  
-Questing: Complete quests gain gold and items while leveling  
+-RPG Gameplay experience
+-Level up!:Kill monsters gain experience points(gain ability points) and items  
+-Open World: Improve your character by discovering the shuboria world  
+-Gain Stats: Gain Int,Dex,Str by ability points  
+-Questing: Complete quests gain gold and items while leveling  
 
 ## Systems Implemented
 
