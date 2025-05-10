@@ -11,13 +11,13 @@ Questing: Complete quests gain gold and items while leveling
 
 ## Systems Implemented
 
-Classic UI for RPG game
-Ability System(Stats and abilities)
-Quest System
-Inventory System
-NPC and World Interaction System
-Local Data Saving System
-Artificial Intelligence(Enemy)
+-Classic UI for RPG game
+-Ability System(Stats and abilities)
+-Quest System
+-Inventory System
+-NPC and World Interaction System
+-Local Data Saving System
+-Artificial Intelligence(Enemy)
 
 
 ⏳ Experience system with progressive leveling formula
