@@ -20,7 +20,6 @@ Shuboria is a fantasy-themed action RPG built with Unity. You play as a mystical
 -Artificial Intelligence(Enemy)  
 
 
-⏳ Experience system with progressive leveling formula
 ## Technologies Used
 Unity 6
 
