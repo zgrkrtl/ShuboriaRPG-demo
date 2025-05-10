@@ -27,11 +27,19 @@ Unity 6
 
 ## Screenshots
 ![Gameplay Screenshot](Screenshots/Shurpgscreenshot1.jpeg)
+
 ![Gameplay Screenshot](Screenshots/Shurpgscreenshot2.jpeg)
+
 ![Gameplay Screenshot](Screenshots/Shurpgscreenshot3.jpeg)
+
 ![Gameplay Screenshot](Screenshots/Shurpgscreenshot4.jpeg)
+
 ![Gameplay Screenshot](Screenshots/Shurpgscreenshot6.jpeg)
+
 ![Gameplay Screenshot](Screenshots/Shurpgscreenshot7.jpeg)
+
 ![Gameplay Screenshot](Screenshots/Shurpgscreenshot8.jpeg)
+
 ![Gameplay Screenshot](Screenshots/Shurpgscreenshot9.jpeg)
+
 ![Gameplay Screenshot](Screenshots/Shurpgscreenshot10.jpeg)
