@@ -15,6 +15,7 @@ Classic UI for RPG game
 Ability System(Stats and abilities)
 Quest System
 Inventory System
+NPC and World Interaction System
 Local Data Saving System
 Artificial Intelligence(Enemy)
 
